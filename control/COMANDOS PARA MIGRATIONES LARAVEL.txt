@@ -1,0 +1,10 @@
+php artisan make:migration contactos
+php artisan migrate
+php artisan migrate:fresh
+
+$now = Carbon::now();
+
+$now->format(Y-m-d)
+scheduled_time
+
+ rm public/storage    para remover el link de la imagen luego se ha  php artisan storage:link para agregar el link y se pueda ver la imagenes
