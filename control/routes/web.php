@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControlController;
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,8 +30,10 @@ Auth::routes(['resgiter'=>false,'reset'=>false]);
 
 Route::get('/home', [ControlController::class, 'index'])->name('home');
 Route::get('/home/busqueda',[ControlController::class,'index'])->name('busqueda');
+Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 Route::group(['middleware'=>'auth'], function(){
 
     Route::get('/home', [ControlController::class, 'index'])->name('home');
+    Route::get('/home/generate-pdf', [PdfController::class, 'generatePdf']);
     
 });
